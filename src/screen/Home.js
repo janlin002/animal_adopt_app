@@ -33,7 +33,7 @@ export default function Home(props) {
               source={{
                 uri: cases.album_file
                   ? cases.album_file
-                  : 'https://asms.coa.gov.tw/amlapp/upload/pic/4b8678ef-0967-494e-98b6-123e545be5df_org.jpg',
+                  : 'https://www.amtb.tw/blog/wp-content/themes/consultix/images/no-image-found-360x250.png',
               }}
               style={{ width: 60, height: 75, marginRight: 5 }}
             />
@@ -65,7 +65,7 @@ export default function Home(props) {
       <FlatList
         data={data}
         renderItem={(cases) => renderData(cases.item)}
-        keyExtractor={(cases) => cases.animal_id}
+        keyExtractor={(cases) => cases.animal_subid}
         style={{ backgroundColor: 'white' }}
       />
     </View>

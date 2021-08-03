@@ -18,7 +18,7 @@ function HomeStack() {
     <Stack.Navigator
       screenOptions={() => ({
         headerStyle: {
-          backgroundColor: '#f4511e',
+          backgroundColor: '#005AB5',
         },
         headerTintColor: '#fff',
         headerBackTitle: '返回',
@@ -35,7 +35,7 @@ function SettingPage() {
     <Stack.Navigator
       screenOptions={() => ({
         headerStyle: {
-          backgroundColor: '#f4511e',
+          backgroundColor: '#005AB5',
         },
         headerTintColor: '#fff',
         headerBackTitle: '返回',
@@ -63,7 +63,7 @@ export default function App() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'tomato',
+          activeTintColor: '#005AB5',
           inactiveTintColor: 'gray',
         }}
       >
