@@ -5,13 +5,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StoreContext } from 'redux-react-hook';
+import configureStore from './src/Redux/store';
 
 import Home from './src/screen/Home';
 import HomePage from './src/screen/HomePage';
 import Settings from './src/screen/Settings';
+import Favorite from './src/screen/Favorite';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const store = configureStore();
 
 function HomeStack() {
   return (
@@ -41,13 +45,30 @@ function SettingPage() {
         headerBackTitle: '返回',
       })}
     >
-      <Stack.Screen name="Settings" component={Settings} />
+      <Stack.Screen name="設定" component={Settings} />
       <Stack.Screen name="HomePage" component={HomePage} />
     </Stack.Navigator>
   );
 }
 
-export default function App() {
+function FavoritePage() {
+  return (
+    <Stack.Navigator
+      screenOptions={() => ({
+        headerStyle: {
+          backgroundColor: '#005AB5',
+        },
+        headerTintColor: '#fff',
+        headerBackTitle: '返回',
+      })}
+    >
+      <Stack.Screen name="我的最愛" component={Favorite} />
+      <Stack.Screen name="HomePage" component={HomePage} />
+    </Stack.Navigator>
+  );
+}
+
+function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -58,6 +79,8 @@ export default function App() {
               iconName = 'ios-home';
             } else if (route.name === 'Settings') {
               iconName = 'ios-settings';
+            } else if (route.name === 'Favorite') {
+              iconName = 'ios-bookmarks-sharp';
             }
             return <Ionicons name={iconName} size={25} color={color} />;
           },
@@ -68,6 +91,7 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="Favorite" component={FavoritePage} />
         <Tab.Screen name="Settings" component={SettingPage} />
       </Tab.Navigator>
     </NavigationContainer>
@@ -82,3 +106,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const MyApp = () => {
+  return (
+    <StoreContext.Provider value={store}>
+      <App />
+    </StoreContext.Provider>
+  );
+};
+
+export default MyApp;

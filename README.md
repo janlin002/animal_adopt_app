@@ -2,6 +2,16 @@
 
 使用 React-Native 串連政府開放平台的[API](https://data.gov.tw/dataset/85903)完成
 
+# 使用到的套件
+
+[React-Native-Elements](https://reactnativeelements.com/)
+
+[React-Native-Dialog](https://www.npmjs.com/package/react-native-dialog)
+
+[ScrollView](https://reactnative.dev/docs/scrollview)
+
+[Alert](https://reactnative.dev/docs/alert)
+
 ## 作品展現
 
 ![img](https://i.ibb.co/JRnvs5L/image1.png)
