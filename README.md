@@ -4,6 +4,6 @@
 
 ## 作品展現
 
-![image1](https://prnt.sc/1iozryu)
+![img](https://i.ibb.co/JRnvs5L/image1.png)
 
-![image](https://prnt.sc/1ip1nce)
+![image2](https://i.ibb.co/K9Rss97/image2.png)

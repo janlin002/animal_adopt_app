@@ -6,20 +6,23 @@ export default function HomePage(props) {
   const passProps = props.route.params.passProps;
   return (
     <View style={{ flex: 1 }}>
-      <Image
-        style={{
-          width: 400,
-          height: 450,
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginTop: 20,
-        }}
-        source={{
-          uri: passProps.album_file
-            ? passProps.album_file
-            : 'https://www.amtb.tw/blog/wp-content/themes/consultix/images/no-image-found-360x250.png',
-        }}
-      />
+      <View>
+        <Image
+          style={{
+            width: 400,
+            height: 450,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginTop: 20,
+          }}
+          source={{
+            uri: passProps.album_file
+              ? passProps.album_file
+              : 'https://www.amtb.tw/blog/wp-content/themes/consultix/images/no-image-found-360x250.png',
+          }}
+        />
+      </View>
+
       <View style={{ flex: 1, marginLeft: 20 }}>
         <Text style={{ textAlign: 'center', marginTop: 10, fontSize: 15 }}>
           基本資訊
