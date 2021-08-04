@@ -1,18 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
-import * as StorageHelper from './src/Helper/StorageHelper';
+import { useMappedState, useDispatch } from 'redux-react-hook';
+import { addToCart } from '../Redux/action';
+import ADD_TO_FAVORITE from '../Redux/actionType';
 
 export default function HomePage(props) {
   const passProps = props.route.params.passProps;
+  // Redux
+  const userCartItem = useMappedState((state) => state.cartItem);
+  const dispatch = useDispatch();
+  console.log(userCartItem, 'cartItem');
+  // Alert Modal
   const createTwoButtonAlert = (passProps) =>
     Alert.alert('是否加入我的最愛？', '加到我的最愛', [
       {
         text: 'Cancel',
         style: 'cancel',
       },
-      { text: 'OK', onPress: () => console.log(passProps) },
+      {
+        text: 'OK',
+        onPress: () =>
+          // dispatch({
+          //   type: 'ADD_TO_FAVORITE',
+          //   payload: { myNewName: passProps },
+          // }),
+          console.log(passProps),
+      },
     ]);
   return (
     <ScrollView>

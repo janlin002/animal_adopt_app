@@ -1,1 +1,1 @@
-export const CHANGE_NAME = 'CHANGE_NAME';
+export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';

@@ -1,11 +1,12 @@
-import { CHANGE_NAME } from './actionType';
+export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 const initialState = {
-  newName: 'jan',
+  cartItem: [],
 };
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_NAME:
-      return { ...state, newName: action.payload.newName };
+    case ADD_TO_FAVORITE:
+      console.log(passProps, 'reducer');
+      return { ...state, cartItem: cartItem.push(action.payload.passProps) };
     default:
       return state;
   }

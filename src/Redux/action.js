@@ -1,7 +1,7 @@
-import { CHANGE_NAME } from './actionType';
-export function changeName(newName) {
+import { ADD_TO_FAVORITE } from './actionType';
+export function addToCart(passProps) {
   return {
-    type: CHANGE_NAME,
-    payload: { newName: newName },
+    type: ADD_TO_FAVORITE,
+    payload: { passProps: passProps },
   };
 }
