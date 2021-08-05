@@ -1,3 +1,4 @@
+import _ from 'lodash';
 export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 const initialState = {
   cartItem: [],
@@ -5,8 +6,9 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_FAVORITE:
-      console.log(passProps, 'reducer');
-      return { ...state, cartItem: cartItem.push(action.payload.passProps) };
+      const { cartItem } = state;
+      const passProps = action.payload.passProps;
+      return { ...state, cartItem: _.union(cartItem, [passProps]) };
     default:
       return state;
   }

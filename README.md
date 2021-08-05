@@ -12,6 +12,8 @@
 
 [Alert](https://reactnative.dev/docs/alert)
 
+[Lodash](https://www.lodashjs.com/docs/lodash.union)
+
 ## 作品展現
 
 ![img](https://i.ibb.co/JRnvs5L/image1.png)
