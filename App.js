@@ -7,6 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StoreContext } from 'redux-react-hook';
 import configureStore from './src/Redux/store';
+import { useMappedState } from 'redux-react-hook';
 
 import Home from './src/screen/Home';
 import HomePage from './src/screen/HomePage';
@@ -69,6 +70,7 @@ function FavoritePage() {
 }
 
 function App() {
+  const userCartItem = useMappedState((state) => state.cartItem);
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -91,8 +93,12 @@ function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Favorite" component={FavoritePage} />
-        <Tab.Screen name="Settings" component={SettingPage} />
+        <Tab.Screen
+          name="Favorite"
+          options={{ tabBarBadge: userCartItem.length }}
+          component={FavoritePage}
+        />
+        {/* <Tab.Screen name="Settings" component={SettingPage} /> */}
       </Tab.Navigator>
     </NavigationContainer>
   );

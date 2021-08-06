@@ -19,7 +19,7 @@ export default function Home(props) {
     fetch(url)
       .then((res) => res.json())
       .then((resData) => setData(resData))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err), 'err');
   };
   const showClickItem = (cases) => {
     props.navigation.push('領養資訊', { passProps: cases });

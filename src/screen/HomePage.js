@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, Alert } from 'react-native';
 import { Button } from 'react-native-elements';
@@ -11,8 +10,6 @@ export default function HomePage(props) {
   // Redux
   const userCartItem = useMappedState((state) => state.cartItem);
   const dispatch = useDispatch();
-  console.log(userCartItem, 'cartItem');
-  console.log(userCartItem.length, 'length');
   // Alert Modal
   const createTwoButtonAlert = (passProps) =>
     Alert.alert('是否加入我的最愛？', '加到我的最愛', [
@@ -27,7 +24,6 @@ export default function HomePage(props) {
             type: 'ADD_TO_FAVORITE',
             payload: { passProps },
           }),
-        // console.log(passProps),
       },
     ]);
   return (
