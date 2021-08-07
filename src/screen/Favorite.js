@@ -49,7 +49,17 @@ export default function Favorite() {
             style={{ backgroundColor: 'white' }}
           />
         ) : (
-          '目前沒有資料喔~~'
+          <View
+            style={{
+              width: 430,
+              height: 700,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text>目前沒有資料喔~~</Text>
+          </View>
         )}
       </View>
     </View>
@@ -60,6 +70,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'black',
   },
   MainStyle: {
     height: 80,
