@@ -1,12 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import { useMappedState } from 'redux-react-hook';
 
 export default function Favorite() {
   const userCartItem = useMappedState((state) => state.cartItem);
-  console.log(userCartItem, 'cartItem');
-  userCartItem.map((item) => console.log(item.animal_remark, 'item'));
   const renderPropsData = (cases) => {
     return (
       <View>
@@ -43,7 +40,7 @@ export default function Favorite() {
   };
   return (
     <View>
-      <Text>
+      <View>
         {userCartItem.length !== 0 ? (
           <FlatList
             data={userCartItem}
@@ -52,11 +49,9 @@ export default function Favorite() {
             style={{ backgroundColor: 'white' }}
           />
         ) : (
-          // userCartItem.map((item, key) => <Text>{item.animal_colour}</Text>)
           '目前沒有資料喔~~'
         )}
-      </Text>
-      <StatusBar style="auto" />
+      </View>
     </View>
   );
 }
@@ -65,14 +60,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   MainStyle: {
     height: 80,
     flexDirection: 'row',
     backgroundColor: 'white',
-    justifyContent: 'center',
     alignItems: 'center',
     padding: 8,
   },
