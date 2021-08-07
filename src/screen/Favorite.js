@@ -51,8 +51,8 @@ export default function Favorite() {
         ) : (
           <View
             style={{
-              width: 430,
-              height: 700,
+              width: '100%',
+              height: '100%',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
